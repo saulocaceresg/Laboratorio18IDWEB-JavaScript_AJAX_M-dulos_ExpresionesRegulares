@@ -74,4 +74,34 @@ async function mostrarNombres2() {
     }
 }
 
-mostrarNombres2();
+// mostrarNombres2();
+
+// 7.	Actualizar el DOM usando datos obtenidos por AJAX: crear un botón en HTML que diga: "Cargar usuario", cuando el usuario haga click en el botón obtener los datos del usuario 2, mostrar en el HTML nombre, email, ciudad (address.city).
+// Usar fetch con promesas
+console.log("+-----------------------------+\nEjercicio 5 (7.)\n\"AJAX y DOM\"");
+
+let boton = document.getElementById("btn-ej5");
+
+// Evento para el botón
+boton.addEventListener("click", (e) => {
+    
+    e.preventDefault();
+
+    // Se crea la etiqueta que llevará la info
+    let p = document.createElement("pre");
+    p.style.fontFamily = "Times";
+
+    fetch("https://jsonplaceholder.typicode.com/users/2") // fetch con promesas
+        .then(response => response.json())
+        .then(data => {
+            // Se imprime en consola
+            console.log("Nombre: " + data.name);
+            console.log("Email: " + data.email);
+            console.log("Ciudad: " + data.address.city);
+            p.textContent = "Nombre: " + data.name + "\nEmail: " + data.email + "\nCiudad: " + data.address.city;
+            document.querySelector("#btn-ej5").after(p); // Se inserta la etiqueta
+        })
+        .catch(error => console.error(error));
+
+});
+
