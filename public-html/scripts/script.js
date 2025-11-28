@@ -26,7 +26,7 @@ async function cargarUsuario2() {
         if (!respuesta.ok) {
             throw new Error ("HTTP ERROR:", respuesta.status);
         }
-        
+
         const data = await respuesta.json(); // Se convierte a JSON
         console.log("Datos:\nName:", data.name, "\nUsername:", data.username, "\nEmail:", data.email); // Se imprime
     } catch (e) {
@@ -34,4 +34,16 @@ async function cargarUsuario2() {
     }
 }
 
-cargarUsuario2();
+// cargarUsuario2();
+
+// 5.	Manipular arreglos devueltos por AJAX: consultar todos los usuarios del API jsonplaceholder, mostrar en consola sólo los nombres de los usuarios. Usa un forEach para mostrarlos. Usar fetch con promesas
+console.log("+-----------------------------+\nEjercicio 3 (5.)\n\"Arreglos y AJAX\"");
+
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(respuesta => respuesta.json()) // Se convierte a json
+    .then(data => {
+        data.forEach((i) => { // foreach para recorrer los usuarios
+            console.log(i.name); // Se imprime el nombre
+        });
+    })
+    .catch(error => console.log(error));
