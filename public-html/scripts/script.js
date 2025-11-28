@@ -39,7 +39,8 @@ async function cargarUsuario2() {
 // 5.	Manipular arreglos devueltos por AJAX: consultar todos los usuarios del API jsonplaceholder, mostrar en consola sólo los nombres de los usuarios. Usa un forEach para mostrarlos. Usar fetch con promesas
 console.log("+-----------------------------+\nEjercicio 3 (5.)\n\"Arreglos y AJAX\"");
 
-fetch("https://jsonplaceholder.typicode.com/users")
+function mostrarNombres() {
+    fetch("https://jsonplaceholder.typicode.com/users")
     .then(respuesta => respuesta.json()) // Se convierte a json
     .then(data => {
         data.forEach((i) => { // foreach para recorrer los usuarios
@@ -47,3 +48,30 @@ fetch("https://jsonplaceholder.typicode.com/users")
         });
     })
     .catch(error => console.log(error));
+}
+
+// mostrarNombres();
+
+// 6.	Manipular arreglos devueltos por AJAX: consultar todos los usuarios del API jsonplaceholder, mostrar en consola sólo los nombres de los usuarios. Usa un forEach para mostrarlos. Usar fetch con async/await
+console.log("+-----------------------------+\nEjercicio 4 (6.)\n\"Recorrer nombres con async/await\"");
+
+async function mostrarNombres2() {
+    try {
+        const respuesta = await fetch ("https://jsonplaceholder.typicode.com/users");
+        
+        // Para atrapar un error en el url
+        if (!respuesta.ok) {
+            throw new Error ("HTTP ERROR:", respuesta.status);
+        }
+
+        const data = await respuesta.json();
+        // forEach para recorrer arrglo de usuarios
+        data.forEach(i => {
+            console.log("Name: " + i.name);
+        });
+    } catch (e) {
+        console.error("Error:", e);
+    }
+}
+
+mostrarNombres2();
