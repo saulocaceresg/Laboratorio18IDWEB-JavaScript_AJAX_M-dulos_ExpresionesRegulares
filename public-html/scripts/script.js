@@ -169,3 +169,12 @@ console.log(regex.test(passwordDebil) ? "Contraseña Fuerte" : "Contraseña déb
 
 console.log("Contraseña: " + passwordFuerte);
 console.log(regex.test(passwordFuerte) ? "Contraseña Fuerte" : "Contraseña débil");
+
+// 12.	Crear la expresión regular para encontrar direcciones URL seguras en un texto
+console.log("+-----------------------------+\nEjercicio 10 (12.)\n\"Expresiones regulares (comprobar url)\"");
+
+const url = "Visita https://google.com para buscar cualquier cosa. No visites a http://pagina.com. Visita https://youtube.com para ver videos.";
+const regexURL = /https:\/\/[A-Za-z0-9\-]+\.[A-Za-z]{2,}/g; // Encuentra https://_____.___
+
+console.log("URL: " + url.match(regexURL));
+
