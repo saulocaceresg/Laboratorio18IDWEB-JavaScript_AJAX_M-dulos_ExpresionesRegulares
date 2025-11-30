@@ -144,3 +144,15 @@ boton2.addEventListener("click", (e) => {
     cargarUsuario();
 
 });
+
+// 9.	Crear un sistema modular con 2 archivos de operaciones matemáticas, y un archivo principal que las use.
+// Crear el archivo sumaResta.js que debe contener exportaciones nombradas para sumar y restar 2 números.
+// Crear el archivo multiplicacionDivision.js que debe contener una exportación por defecto multiplicar y una exportación nombrada dividir para 2 números.
+// Si b es 0, debe lanzar un error ("No se puede dividir entre cero");
+// Crear el archivo app.js que debe importar la exportación por defecto de multiplicacionDivision.js e importar las exportaciones nombradas de los otros 2 archivos.
+// Luego debe ejecutar las 4 operaciones y mostrar resultados. Si dividir lanza un error, captúralo en un try/catch y muestra Error en división: “mensaje”.
+// console.log("+-----------------------------+\nEjercicio 7 (9.)\n\"Sistema modular ()\"");
+
+// export 
+
+
