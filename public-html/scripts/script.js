@@ -157,3 +157,15 @@ boton2.addEventListener("click", (e) => {
 
 
 // 10.	Crea un HTML que cargue app.js
+
+// 11.	Crear la expresión regular para validar una contraseña fuerte Regla: mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número
+console.log("+-----------------------------+\nEjercicio 9 (11.)\n\"Expresiones regulares (comprobar contraseña)\"");
+
+const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+const passwordDebil = "123asssd";
+const passwordFuerte = "123asssS";
+console.log("Contraseña: " + passwordDebil);
+console.log(regex.test(passwordDebil) ? "Contraseña Fuerte" : "Contraseña débil");
+
+console.log("Contraseña: " + passwordFuerte);
+console.log(regex.test(passwordFuerte) ? "Contraseña Fuerte" : "Contraseña débil");
