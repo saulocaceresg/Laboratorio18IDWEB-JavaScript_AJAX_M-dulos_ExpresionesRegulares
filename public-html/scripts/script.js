@@ -156,3 +156,4 @@ boton2.addEventListener("click", (e) => {
 // export 
 
 
+// 10.	Crea un HTML que cargue app.js
