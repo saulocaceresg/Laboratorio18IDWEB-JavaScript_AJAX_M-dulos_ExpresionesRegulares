@@ -199,3 +199,26 @@ const regexOracion = /[A-Z ][A-Za-z0-9áéíóú ]*/g;
 let oracion = "Hola. Cómo estas? Bien!";
 
 console.log(oracion.match(regexOracion)); // Se usa match para buscar en la cadena
+
+// 15.	Crear la expresión regular para detectar formato de fecha (dd/mm/yyyy)
+console.log("+-----------------------------+\nEjercicio 13 (15.)\n\"Expresiones regulares (detectar formato de fecha)\"");
+
+const regexFecha = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+
+// Fechas para validar
+let fechaValida = "31/12/2012";
+let fecha1NoValida = "32/12/2012";
+let fecha2NoValida = "31/13/2012";
+let fecha3NoValida = "1/12/2012";
+let fecha4NoValida = "31/2/2012";
+let fecha5NoValida = "31/2/2012";
+let fecha6NoValida = "31/2/201";
+
+
+console.log(fechaValida + ": " + (regexFecha.test(fechaValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha1NoValida + ": " + (regexFecha.test(fecha1NoValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha2NoValida + ": " + (regexFecha.test(fecha2NoValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha3NoValida + ": " + (regexFecha.test(fecha3NoValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha4NoValida + ": " + (regexFecha.test(fecha4NoValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha5NoValida + ": " + (regexFecha.test(fecha5NoValida) ? "Fecha válida" : "Fecha no válida"));
+console.log(fecha6NoValida + ": " + (regexFecha.test(fecha6NoValida) ? "Fecha válida" : "Fecha no válida"));
