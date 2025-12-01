@@ -189,3 +189,13 @@ const regexHTML = /^\<h1.+?\>.+\<\/h1\>$/; // Expresión regular -> busca la eti
 console.log(etiquetaH1);
 
 console.log(etiquetaH1.outerHTML.replace(regexHTML, contenido));
+
+// 14.	Crear la expresión regular para dividir un texto en oraciones "Hola. Cómo estás? Bien!" -> ["Hola", " Cómo estás", " Bien"]
+console.log("+-----------------------------+\nEjercicio 12 (14.)\n\"Expresiones regulares (dividir oraciones)\"");
+
+// Captura todas las oraciones que empiecen con mayúscula o espacio en blanco, que tengan contenido alfanumérico y espacios en su interior
+const regexOracion = /[A-Z ][A-Za-z0-9áéíóú ]*/g; 
+
+let oracion = "Hola. Cómo estas? Bien!";
+
+console.log(oracion.match(regexOracion)); // Se usa match para buscar en la cadena
