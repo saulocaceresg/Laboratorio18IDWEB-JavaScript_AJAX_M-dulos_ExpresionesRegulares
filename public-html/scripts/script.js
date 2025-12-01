@@ -178,3 +178,14 @@ const regexURL = /https:\/\/[A-Za-z0-9\-]+\.[A-Za-z]{2,}/g; // Encuentra https:/
 
 console.log("URL: " + url.match(regexURL));
 
+// 13.	Crear la expresión regular para quitar etiquetas HTML <h1>Hola</h1> -> Hola
+console.log("+-----------------------------+\nEjercicio 11 (13.)\n\"Expresiones regulares (quitar etiquetas HTML)\"");
+
+let etiquetaH1 = document.getElementById("h1-ej11"); // Consigue la etiqueta del documento
+let contenido = etiquetaH1.textContent; // Consigue el contenido
+
+const regexHTML = /^\<h1.+?\>.+\<\/h1\>$/; // Expresión regular -> busca la etiqueta <h1>...</h1>. Cuenta también los atributos de la eitqueta
+
+console.log(etiquetaH1);
+
+console.log(etiquetaH1.outerHTML.replace(regexHTML, contenido));
